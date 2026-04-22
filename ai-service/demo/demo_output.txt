@@ -1,0 +1,154 @@
+{
+  "base_url": "http://127.0.0.1:5000",
+  "captured_at_utc": "2026-04-22T03:42:15.246661+00:00",
+  "health": {
+    "status_code": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "models": {
+    "status_code": 200,
+    "body": {
+      "count": 16,
+      "models": [
+        "meta-llama/llama-prompt-guard-2-86m",
+        "whisper-large-v3",
+        "llama-3.3-70b-versatile",
+        "canopylabs/orpheus-arabic-saudi",
+        "meta-llama/llama-prompt-guard-2-22m",
+        "openai/gpt-oss-safeguard-20b",
+        "allam-2-7b",
+        "groq/compound",
+        "whisper-large-v3-turbo",
+        "qwen/qwen3-32b",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
+        "groq/compound-mini",
+        "openai/gpt-oss-20b",
+        "canopylabs/orpheus-v1-english",
+        "llama-3.1-8b-instant",
+        "openai/gpt-oss-120b"
+      ]
+    }
+  },
+  "categorise_1": {
+    "status_code": 200,
+    "body": {
+      "cached": false,
+      "content": "```json\n[\n  {\n    \"category\": \"filing\",\n    \"reasoning\": \"User is referring to a specific type of regulatory filing.\",\n    \"confidence\": 0.9\n  },\n  {\n    \"category\": \"entity\",\n    \"reasoning\": \"User is associated with a company or entity that requires 10-K filing.\",\n    \"confidence\": 0.8\n  },\n  {\n    \"category\": \"compliance_question\",\n    \"reasoning\": \"User is inquiring about compliance requirements for FY2025.\",\n    \"confidence\": 0.7",
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "```json\n[\n  {\n    \"category\": \"filing\",\n    \"reasoning\": \"User is referring to a specific type of regulatory filing.\",\n    \"confidence\": 0.9\n  },\n  {\n    \"category\": \"entity\",\n    \"reasoning\": \"User is associated with a company or entity that requires 10-K filing.\",\n    \"confidence\": 0.8\n  },\n  {\n    \"category\": \"compliance_question\",\n    \"reasoning\": \"User is inquiring about compliance requirements for FY2025.\",\n    \"confidence\": 0.7",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1776829337,
+        "id": "chatcmpl-eb4c27da-7179-45c6-8566-635a50a606cf",
+        "model": "llama-3.1-8b-instant",
+        "object": "chat.completion",
+        "service_tier": "on_demand",
+        "system_fingerprint": "fp_4387d3edbb",
+        "usage": {
+          "completion_time": 0.201765196,
+          "completion_tokens": 120,
+          "prompt_time": 0.010196073,
+          "prompt_tokens": 132,
+          "queue_time": 0.051866447,
+          "total_time": 0.211961269,
+          "total_tokens": 252
+        },
+        "usage_breakdown": null,
+        "x_groq": {
+          "id": "req_01kpsmg3a8eceta61rtk85jgdx",
+          "seed": 2081082557
+        }
+      }
+    }
+  },
+  "categorise_2": {
+    "status_code": 200,
+    "body": {
+      "cached": true,
+      "content": "```json\n[\n  {\n    \"category\": \"filing\",\n    \"reasoning\": \"User is referring to a specific type of regulatory filing.\",\n    \"confidence\": 0.9\n  },\n  {\n    \"category\": \"entity\",\n    \"reasoning\": \"User is associated with a company or entity that requires 10-K filing.\",\n    \"confidence\": 0.8\n  },\n  {\n    \"category\": \"compliance_question\",\n    \"reasoning\": \"User is inquiring about compliance requirements for FY2025.\",\n    \"confidence\": 0.7",
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "```json\n[\n  {\n    \"category\": \"filing\",\n    \"reasoning\": \"User is referring to a specific type of regulatory filing.\",\n    \"confidence\": 0.9\n  },\n  {\n    \"category\": \"entity\",\n    \"reasoning\": \"User is associated with a company or entity that requires 10-K filing.\",\n    \"confidence\": 0.8\n  },\n  {\n    \"category\": \"compliance_question\",\n    \"reasoning\": \"User is inquiring about compliance requirements for FY2025.\",\n    \"confidence\": 0.7",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1776829337,
+        "id": "chatcmpl-eb4c27da-7179-45c6-8566-635a50a606cf",
+        "model": "llama-3.1-8b-instant",
+        "object": "chat.completion",
+        "service_tier": "on_demand",
+        "system_fingerprint": "fp_4387d3edbb",
+        "usage": {
+          "completion_time": 0.201765196,
+          "completion_tokens": 120,
+          "prompt_time": 0.010196073,
+          "prompt_tokens": 132,
+          "queue_time": 0.051866447,
+          "total_time": 0.211961269,
+          "total_tokens": 252
+        },
+        "usage_breakdown": null,
+        "x_groq": {
+          "id": "req_01kpsmg3a8eceta61rtk85jgdx",
+          "seed": 2081082557
+        }
+      }
+    }
+  },
+  "generate_report": {
+    "status_code": 200,
+    "body": {
+      "cached": false,
+      "content": "**ACME INC.**\n**10-K FILING REPORT**\n**FOR THE FISCAL YEAR ENDED DECEMBER 31, 2025**\n\n**EXECUTIVE SUMMARY**\n\nAcme Inc. (the \"Company\") is pleased to submit its annual report for the fiscal year ended December 31, 2025 (the \"Fiscal Year\"). This report provides an overview of the Company's financial performance, business operations, and significant events that occurred during the Fiscal Year.\n\n**BUSINESS OVERVIEW**\n\n* The Company is a [TODO: brief description of the Company's business and products/services offered]\n* The Company's primary business operations are located in [TODO: list of locations]\n* The Company's mission is to [TODO: describe the Company's mission and values]\n\n**FINANCIAL HIGHLIGHTS**\n\n* **Revenue:**\n + Total revenue for the Fiscal Year was $[TODO: revenue amount]\n + Revenue by segment:\n  - [TODO: list of revenue segments with corresponding amounts]\n* **Expenses:**\n + Total expenses for the Fiscal Year were $[TODO: expense amount]\n + Expense by category:\n  - [TODO: list of expense categories with corresponding amounts]\n* **Net Income:**\n + Net income for the Fiscal Year was $[TODO: net income amount]\n* **Cash Flow:**\n + Operating cash flow for the Fiscal Year was $[TODO: operating cash flow amount]\n + Investing cash flow for the Fiscal Year was $[TODO: investing cash flow amount]\n + Financing cash flow for the Fiscal Year was $[TODO: financing cash flow amount]\n\n**OPERATING SEGMENTS**\n\n* The Company operates in the following segments:\n + [TODO: list of operating segments with",
+      "raw": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "**ACME INC.**\n**10-K FILING REPORT**\n**FOR THE FISCAL YEAR ENDED DECEMBER 31, 2025**\n\n**EXECUTIVE SUMMARY**\n\nAcme Inc. (the \"Company\") is pleased to submit its annual report for the fiscal year ended December 31, 2025 (the \"Fiscal Year\"). This report provides an overview of the Company's financial performance, business operations, and significant events that occurred during the Fiscal Year.\n\n**BUSINESS OVERVIEW**\n\n* The Company is a [TODO: brief description of the Company's business and products/services offered]\n* The Company's primary business operations are located in [TODO: list of locations]\n* The Company's mission is to [TODO: describe the Company's mission and values]\n\n**FINANCIAL HIGHLIGHTS**\n\n* **Revenue:**\n + Total revenue for the Fiscal Year was $[TODO: revenue amount]\n + Revenue by segment:\n  - [TODO: list of revenue segments with corresponding amounts]\n* **Expenses:**\n + Total expenses for the Fiscal Year were $[TODO: expense amount]\n + Expense by category:\n  - [TODO: list of expense categories with corresponding amounts]\n* **Net Income:**\n + Net income for the Fiscal Year was $[TODO: net income amount]\n* **Cash Flow:**\n + Operating cash flow for the Fiscal Year was $[TODO: operating cash flow amount]\n + Investing cash flow for the Fiscal Year was $[TODO: investing cash flow amount]\n + Financing cash flow for the Fiscal Year was $[TODO: financing cash flow amount]\n\n**OPERATING SEGMENTS**\n\n* The Company operates in the following segments:\n + [TODO: list of operating segments with",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1776829340,
+        "id": "chatcmpl-f8ee784a-8da4-4bc5-adbf-9afb485ab670",
+        "model": "llama-3.1-8b-instant",
+        "object": "chat.completion",
+        "service_tier": "on_demand",
+        "system_fingerprint": "fp_4387d3edbb",
+        "usage": {
+          "completion_time": 1.7852001990000002,
+          "completion_tokens": 350,
+          "prompt_time": 0.315614379,
+          "prompt_tokens": 127,
+          "queue_time": 0.353541091,
+          "total_time": 2.100814578,
+          "total_tokens": 477
+        },
+        "usage_breakdown": null,
+        "x_groq": {
+          "id": "req_01kpsmg4atecfvqhs4jdyke1zy",
+          "seed": 611814029
+        }
+      }
+    }
+  }
+}
