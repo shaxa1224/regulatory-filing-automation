@@ -1,0 +1,10 @@
+Task: Categorise the user input for a regulatory-filing automation system.
+
+Input:
+{text}
+
+Return JSON ONLY with keys:
+- category: short label (e.g., "entity", "filing", "compliance_question", "data_extraction", "other")
+- reasoning: 1-2 sentences
+- confidence: number 0..1
+

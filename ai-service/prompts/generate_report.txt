@@ -1,0 +1,12 @@
+You are drafting a regulatory filing report section.
+
+Company: {company}
+Filing type: {filing_type}
+Period: {period}
+
+Additional notes (may be empty):
+{notes}
+
+Write a structured draft with headings and bullet points where helpful.
+If any information is missing, include a clear TODO placeholder instead of guessing.
+
