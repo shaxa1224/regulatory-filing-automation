@@ -813,3 +813,70 @@ Date: Friday, 18 April 2026
 Time: 2026-04-18T14:00:00Z
 Status: ✅ TESTING COMPLETE & VERIFIED
 
+OWASP ZAP Baseline Scan — Day 7 Results
+Scan Date: Wed, 29 Apr 2026
+Tool: OWASP ZAP 2.17.0
+Scan Type: Baseline Scan
+Target: Regulatory Filing Automation (AI Service)
+Conducted by: AI Developer 3
+
+Summary of Findings
+SeverityCountHigh0Medium1Low0Informational4
+
+Medium Findings — Remediation Required
+1. CSP: Failure to Define Directive with No Fallback
+FieldDetailRisk LevelMediumCWECWE-693WASCWASC-15
+Description:
+The Content Security Policy (CSP) header is present but does not define one or more directives that have no fallback. Directives such as form-action, frame-ancestors, and base-uri do not fall back to default-src, meaning if they are not explicitly defined, the browser applies no restriction for those contexts — leaving the application open to clickjacking, form hijacking, and base tag injection attacks.
+Attack Scenario:
+An attacker could inject a <base> tag into the page to redirect all relative URLs to a malicious domain, or submit forms to an attacker-controlled endpoint, since base-uri and form-action are not restricted by the current CSP.
+Remediation Plan:
+Update the CSP header to explicitly define the following missing directives:
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self';
+  style-src 'self';
+  img-src 'self' data:;
+  font-src 'self' data:;
+  connect-src 'self';
+  form-action 'self';
+  frame-ancestors 'none';
+  base-uri 'self';
+In Flask, apply this using flask-talisman:
+pythonfrom flask_talisman import Talisman
+
+csp = {
+    'default-src': "'self'",
+    'script-src': "'self'",
+    'style-src': "'self'",
+    'img-src': "'self' data:",
+    'font-src': "'self' data:",
+    'connect-src': "'self'",
+    'form-action': "'self'",
+    'frame-ancestors': "'none'",
+    'base-uri': "'self'"
+}
+
+Talisman(app, content_security_policy=csp)
+Status: 🔴 Open — Fix planned for Day 8
+Re-scan: Scheduled after fix is applied on Day 8
+
+Informational Findings
+These do not require immediate remediation but are noted for awareness.
+1. Authentication Request Identified
+Description: ZAP identified an authentication endpoint during scanning. No vulnerability, but confirms the login route is exposed and should be protected with rate limiting and account lockout policies.
+Action: Informational only. Rate limiting already applied via flask-limiter.
+2. Information Disclosure — Sensitive Information in URL
+Description: Sensitive parameters were observed being passed via URL query strings, which may appear in server logs or browser history.
+Action: Review all endpoints to ensure sensitive data (tokens, IDs) is passed in request body or headers, not in URLs.
+3. User Agent Fuzzer
+Description: ZAP tested various User-Agent headers. No vulnerabilities found. Informational only.
+Action: None required.
+4. User Controllable HTML Element Attribute (Potential XSS)
+Description: ZAP detected user-controlled input being reflected in HTML attributes, which could potentially lead to XSS if not properly sanitised.
+Action: Input sanitisation middleware already in place (Day 3). Verify all output is HTML-encoded. Monitor in re-scan after Day 8 fixes.
+
+Next Steps
+ActionOwnerTarget DayFix CSP header using flask-talismanAI Developer 3Day 8Re-scan after CSP fix to confirm resolvedAI Developer 3Day 8Review URL parameter disclosureAI Developer 3Day 9Verify XSS sanitisation covers HTML attributesAI Developer 3Day 8
+
+Sign-off: AI Developer 3 — Day 7 ZAP baseline scan completed. One Medium finding identified. Remediation planned for Day 8.
