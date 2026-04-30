@@ -917,3 +917,40 @@ Sign-off: AI Developer 3 — Day 7 ZAP baseline scan completed. One Medium findi
 - File: `security/zap_rescan_ai_service.html`
 - Scan Date: 23 April 2026
 - Result: All Medium findings resolved
+
+---
+
+## Day 9 — PII Audit
+**Date:** 24 April 2026
+**Developer:** AI Developer 3
+
+### Files Audited
+
+| File | PII Found | Result |
+|------|-----------|--------|
+| app.py | None | ✅ Clean |
+| services/input_sanitiser.py | None | ✅ Clean |
+| prompts/security_headers.txt | None | ✅ Clean |
+| requirements.txt | None | ✅ Clean |
+
+### Notes
+- routes/ files not yet created by team
+- groq_client.py not yet created by team
+- All existing files are free of PII
+- Audit to be repeated on Day 14 once all 
+  team files are complete
+
+### PII Audit Result
+✅ All existing files clean.
+No personal data found in prompts or logs.
+No emails, names, passwords or IDs hardcoded
+anywhere in the AI service codebase.
+
+### PII Rules Established for Team
+- Never log user emails or names in Flask logs
+- Always use filing_id as identifier in prompts
+- No real personal data in test cases
+- All prompt templates must use placeholder 
+  variables only
+
+  
