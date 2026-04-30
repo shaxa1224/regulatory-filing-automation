@@ -7,11 +7,19 @@ from flask import Flask, request, jsonify
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from services.input_sanitiser import InputSanitiser
+from flask_talisman import Talisman 
 import logging
 
 # Initialize Flask app
 app = Flask(__name__)
-
+# Day 8 Security Fix — Security Headers
+Talisman(
+    app,
+    content_security_policy=False,
+    x_content_type_options=True,
+    frame_options='DENY',  
+    strict_transport_security=False
+)
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

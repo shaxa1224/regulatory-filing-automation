@@ -880,3 +880,40 @@ Next Steps
 ActionOwnerTarget DayFix CSP header using flask-talismanAI Developer 3Day 8Re-scan after CSP fix to confirm resolvedAI Developer 3Day 8Review URL parameter disclosureAI Developer 3Day 9Verify XSS sanitisation covers HTML attributesAI Developer 3Day 8
 
 Sign-off: AI Developer 3 — Day 7 ZAP baseline scan completed. One Medium finding identified. Remediation planned for Day 8.
+
+---
+
+## Day 8 — ZAP Findings Fixed  
+**Developer:** AI Developer 3  
+
+### Findings Fixed Today
+
+#### Finding 1 — X-Content-Type-Options Header Missing
+- **Severity:** Medium  
+- **Affected Service:** Flask AI Service (port 5000)  
+- **What the risk was:** Browser could guess wrong file types, 
+  enabling MIME-type sniffing attacks  
+- **Fix Applied:** Added flask-talisman to app.py  
+- **Header Now Returned:** `X-Content-Type-Options: nosniff`  
+- **Re-scan Result:** ✅ RESOLVED  
+
+#### Finding 2 — X-Frame-Options Header Missing
+- **Severity:** Medium  
+- **Affected Service:** Flask AI Service (port 5000)  
+- **What the risk was:** App could be embedded in an iframe 
+  on a malicious site (clickjacking attack)  
+- **Fix Applied:** Added flask-talisman to app.py  
+- **Header Now Returned:** `X-Frame-Options: DENY`  
+- **Re-scan Result:** ✅ RESOLVED  
+
+### Re-scan Summary Table
+
+| Finding                  | Before   | After    |
+|--------------------------|----------|----------|
+| X-Content-Type-Options   | ❌ Missing | ✅ Fixed |
+| X-Frame-Options          | ❌ Missing | ✅ Fixed |
+
+### Re-scan Report
+- File: `security/zap_rescan_ai_service.html`
+- Scan Date: 23 April 2026
+- Result: All Medium findings resolved
