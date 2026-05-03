@@ -953,4 +953,55 @@ anywhere in the AI service codebase.
 - All prompt templates must use placeholder 
   variables only
 
-  
+ ---
+
+## Day 10 — Week 2 Security Sign-Off
+**Date:** 25 April 2026
+**Developer:** AI Developer 3
+
+### Test Results
+
+#### 1. JWT Enforcement
+| Test | Expected | Result |
+|------|----------|--------|
+| Request without token | 401 | ⏳ Pending — backend not available yet |
+| Request with fake token | 401 | ⏳ Pending — backend not available yet |
+
+Note: JWT test pending until Java backend 
+is running. Will verify on Day 13 full 
+system test.
+
+#### 2. Rate Limiting
+| Test | Expected | Result |
+|------|----------|--------|
+| 35 requests to /describe | 429 after 30 | ✅ PASSED |
+| Requests 1-30 | 200 OK | ✅ PASSED |
+| Requests 31-35 | 429 blocked | ✅ PASSED |
+
+#### 3. Injection Rejection
+| Test | Expected | Result |
+|------|----------|--------|
+| HTML script tag in input | 400 Bad Request | ✅ PASSED |
+| Prompt injection keywords | 400 Bad Request | ✅ PASSED |
+
+#### 4. Security Headers (Day 8 verification)
+| Header | Expected | Result |
+|--------|----------|--------|
+| X-Content-Type-Options | nosniff | ✅ PRESENT |
+| X-Frame-Options | DENY | ✅ PRESENT |
+
+### Week 2 Security Sign-Off
+✅ Rate limiting verified — 429 after 30 
+   requests confirmed working
+
+✅ Injection rejection verified — HTML and 
+   prompt injection both blocked with 400
+
+✅ Security headers confirmed present on 
+   all responses
+
+⏳ JWT enforcement — pending backend setup
+
+**Week 2 Security Status: SIGNED OFF ✅**
+**Signed by:** AI Developer 3
+**Date:** 25 April 2026 
