@@ -1051,3 +1051,42 @@ internal notes — no action required.
 **Overall Status: PASSED ✅**
 **Signed by:** AI Developer 3
 **Date:** 28 April 2026
+
+---
+
+## Day 12 — ZAP Re-Scan After Fixes
+**Date:** 4 May 2026
+**Developer:** AI Developer 3
+**Tool:** OWASP ZAP Version 2.17.0
+**Target:** http://localhost:5000
+**Report:** security/zap_rescan_day12.html
+
+### Re-Scan Summary
+
+| Risk Level | Day 11 | Day 12 | Status |
+|------------|--------|--------|--------|
+| Critical | 0 | 0 | ✅ Clean |
+| High | 0 | 0 | ✅ Clean |
+| Medium | 1 | 1 | ⚠️ Accepted |
+| Informational | 4 | 4 | Same |
+
+### Medium Finding — Accepted Risk
+**Finding:** User Controllable HTML Element Attribute
+**Decision:** Accepted
+**Reason:** This is an API service returning
+JSON only. Input sanitisation middleware
+already in place via InputSanitiser class
+which blocks HTML tags, prompt injection
+and email header injection.
+
+### Day 12 Result
+✅ Zero Critical findings confirmed
+✅ Zero High findings confirmed
+✅ Existing medium finding mitigated
+   by InputSanitiser middleware
+✅ Security headers strengthened with
+   Cache-Control and Pragma headers
+
+**Overall Status: PASSED ✅**
+**Signed by:** AI Developer 3
+**Date:** 4 May 2026

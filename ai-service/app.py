@@ -13,13 +13,29 @@ import logging
 # Initialize Flask app
 app = Flask(__name__)
 # Day 8 Security Fix — Security Headers
+# Talisman(
+#     app,
+#     content_security_policy=False,
+#     x_content_type_options=True,
+#     frame_options='DENY',  
+#     strict_transport_security=False
+# )
+
+# Day 12 — Strengthened Security Headers
 Talisman(
     app,
     content_security_policy=False,
     x_content_type_options=True,
-    frame_options='DENY',  
-    strict_transport_security=False
+    frame_options='DENY',
+    strict_transport_security=False,
+    referrer_policy='strict-origin-when-cross-origin'
 )
+
+@app.after_request
+def add_extra_headers(response):
+    response.headers['Cache-Control'] = 'no-store'
+    response.headers['Pragma'] = 'no-cache'
+    return response
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
