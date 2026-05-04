@@ -1004,4 +1004,50 @@ system test.
 
 **Week 2 Security Status: SIGNED OFF ✅**
 **Signed by:** AI Developer 3
-**Date:** 25 April 2026 
+**Date:** 25 April 2026
+
+
+---
+
+## Day 11 — Full OWASP ZAP Active Scan
+**Date:** 28 April 2026
+**Developer:** AI Developer 3
+**Tool:** OWASP ZAP Version 2.17.0
+**Target:** http://localhost:5000
+**Report:** security/zap_active_scan_day11.html
+
+### Scan Summary
+
+| Risk Level | Count | Action |
+|------------|-------|--------|
+| Critical | 0 | ✅ None required |
+| High | 0 | ✅ None required |
+| Medium | 1 | Documented below |
+| Low | 0 | N/A |
+| Informational | 4 | Noted |
+
+### Critical Findings
+✅ Zero Critical vulnerabilities found
+
+### High Findings
+✅ Zero High vulnerabilities found
+
+### Medium Findings
+| ID | Finding | Risk | Decision |
+|----|---------|------|----------|
+| M1 | User Controllable HTML Element Attribute | Medium | Accepted — API service returns JSON only, input sanitisation already in place via InputSanitiser middleware |
+
+### Informational Findings
+All 4 informational findings are ZAP
+internal notes — no action required.
+
+### Active Scan Result
+✅ Zero Critical findings
+✅ Zero High findings
+✅ Input sanitisation already mitigates
+   the Medium finding
+✅ All security headers present and verified
+
+**Overall Status: PASSED ✅**
+**Signed by:** AI Developer 3
+**Date:** 28 April 2026
